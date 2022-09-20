@@ -36,9 +36,9 @@ class UserManager(BaseUserManager):
                 username= email.split('@', 1)[0]
             if phone_number:
                 username= random.choice('abcdefghijklmnopqrstuvwxyz')+str(phone_number)[-7:]
-            while user.objects.filter(username=username).exists():
+            while User.objects.filter(username=username).exists():
                 username += str(random.randint(10,99))
-        return self._create_user(username, phone_number, email, password, **extra_fields)
+        return self._create_user(username, phone_number, email, password, False, False, **extra_fields)
 
     def create_superuser(self, username, phone_number, email, password, **extra_fields):
         return self._create_user(username,phone_number,email,password,True,True,**extra_fields)
