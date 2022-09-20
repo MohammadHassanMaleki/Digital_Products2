@@ -1,8 +1,8 @@
 from django.core.validators import RegexValidator
 from django.utils.translation import ugettext_lazy as _
 
-class PhoneNumberValidator(RegexValidator)
-    regex = = '^98(9[0-3,9]\d{8}|[1-9]\d{9})$'
+class PhoneNumberValidator(RegexValidator):
+    regex =  '^98(9[0-3,9]\d{8}|[1-9]\d{9})$'
     message = 'phone number must be a VALID 12 digits like 98**********'
     code = 'invalid_phone_number'
 
@@ -13,7 +13,7 @@ class SKUValidator(RegexValidator):
 
 class UsernameValidator(RegexValidator):
     regex = '^[a-zA-Z][a-zA-Z0-9_\.]+$'
-    message = +('Enter a valid username starting with a-z.'
+    message = ('Enter a valid username starting with a-z.'
                 'This value may contain only letters, numbers and underscore characters '),
     code = 'invalid_username'
 
