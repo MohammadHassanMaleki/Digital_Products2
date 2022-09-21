@@ -40,12 +40,12 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework_simplejwt',
+    'import_export',
 
     'users',
     'products',
     'payments',
     'subscriptions'
-
 ]
 
 MIDDLEWARE = [
@@ -127,6 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 # media files
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
